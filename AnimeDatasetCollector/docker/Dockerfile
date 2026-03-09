@@ -1,4 +1,4 @@
-FROM python:3.13.5-slim AS builder
+FROM python:3.14.0rc1-slim AS builder
 
 WORKDIR /app
 
@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir pandas requests tqdm openpyxl kaggle
 
 # Second stage: runtime image
-FROM python:3.13.5-slim
+FROM python:3.14.0rc1-slim
 
 WORKDIR /app
 
